@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Passcode</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #passcode-container {
+      text-align: center;
+      background: #2c2c2c;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div id="passcode-container">
+  <h2>Enter Passcode to Access the Game</h2>
+  <input type="password" id="passcode" placeholder="Enter passcode">
+  <br>
+  <button onclick="checkPasscode()">Submit</button>
+  <p id="message" style="color:red;"></p>
+</div>
+
+<script>
+  const correctPasscode = "bigback"; // <-- updated passcode
+
+  function checkPasscode() {
+    const input = document.getElementById('passcode').value;
+    if(input === correctPasscode) {
+      window.location.href = "index.html"; // <-- your actual Eaglercraft index.html
+    } else {
+      document.getElementById('message').textContent = "Incorrect passcode!";
+    }
+  }
+</script>
+
+</body>
+</html>
